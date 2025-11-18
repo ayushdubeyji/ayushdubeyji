@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  gemini-workspace:
+    build: .
+    container_name: gemini-workspace
+    stdin_open: true
+    tty: true
+    volumes:
+      # Mount config and sketches for persistence
+      - ./config.yaml:/app/config.yaml
+      - ./sketches:/app/sketches
+      # Mount SSH keys if needed for Raspberry Pi
+      - ~/.ssh:/root/.ssh:ro
+    environment:
+      # Set Gemini API key via environment variable
+      - GEMINI_API_KEY=${GEMINI_API_KEY}
+    network_mode: host
+    restart: unless-stopped

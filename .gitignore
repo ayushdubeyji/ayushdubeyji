@@ -28,6 +28,7 @@ ENV/
 
 # Configuration (don't commit sensitive data)
 config.yaml
+.env
 
 # Generated sketches
 sketches/

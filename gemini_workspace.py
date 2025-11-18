@@ -10,6 +10,13 @@ import sys
 import argparse
 from typing import Dict, Any
 
+# Load environment variables from .env file if it exists
+try:
+    from dotenv import load_dotenv
+    load_dotenv()
+except ImportError:
+    pass  # python-dotenv not required, just nice to have
+
 try:
     import google.generativeai as genai
 except ImportError:
@@ -139,7 +146,8 @@ def main():
     if args.interactive:
         # Interactive mode
         print("Gemini Workspace Interactive Mode")
-        print("Type 'exit' or 'quit' to exit\n")
+        print("Type 'exit' or 'quit' to exit")
+        print("Type 'help' for example commands\n")
         
         while True:
             try:
@@ -147,6 +155,18 @@ def main():
                 if prompt.lower() in ['exit', 'quit']:
                     break
                 if not prompt:
+                    continue
+                if prompt.lower() == 'help':
+                    print("\n📚 Example Commands:")
+                    print("\nRaspberry Pi:")
+                    print("  - Install numpy on my raspberry pi")
+                    print("  - Diagnose my raspberry pi")
+                    print("  - Run uptime on my raspberry pi")
+                    print("\nESP8266/ESP32:")
+                    print("  - Create an ESP8266 sketch to blink LED on GPIO 2")
+                    print("  - Create ESP32 WiFi connection sketch")
+                    print("  - Upload sketch to ESP8266 at 192.168.1.100 via OTA")
+                    print("\nType 'exit' or 'quit' to exit\n")
                     continue
                     
                 result = workspace.process_prompt(prompt)

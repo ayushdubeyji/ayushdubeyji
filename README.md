@@ -22,6 +22,18 @@ An intelligent agentic workspace powered by Google's Gemini AI that helps you ma
 
 ## Quick Start 🚀
 
+### For Mobile Users 📱
+
+Want to use this from your phone? Check out the [Mobile Usage Guide](MOBILE_GUIDE.md)!
+
+**TL;DR for mobile:**
+1. Open this repo on GitHub mobile
+2. Create a Codespace
+3. Run `./quick-start.sh`
+4. Done! 🎉
+
+### For Desktop Users
+
 ### Prerequisites
 
 1. **Python 3.8+**
@@ -29,6 +41,27 @@ An intelligent agentic workspace powered by Google's Gemini AI that helps you ma
 3. **Arduino CLI** (optional, for ESP compilation) - [Installation Guide](https://arduino.github.io/arduino-cli/installation/)
 
 ### Installation
+
+#### Option 1: GitHub Codespaces (Easiest - Works on Mobile!)
+
+1. Click "Code" → "Codespaces" → "Create codespace on main"
+2. Wait for setup to complete
+3. Run `./quick-start.sh`
+
+See [MOBILE_GUIDE.md](MOBILE_GUIDE.md) for detailed instructions.
+
+#### Option 2: Docker (Recommended for Desktop)
+
+```bash
+# Using docker-compose
+docker-compose up
+
+# Or build manually
+docker build -t gemini-workspace .
+docker run -it -e GEMINI_API_KEY='your-key' gemini-workspace
+```
+
+#### Option 3: Local Installation
 
 ```bash
 # Clone the repository
@@ -44,6 +77,23 @@ cp config.example.yaml config.yaml
 ```
 
 ### Configuration
+
+#### Quick Setup
+
+```bash
+# Set API key via environment variable (easiest)
+export GEMINI_API_KEY='your-api-key'
+
+# Or copy and edit config
+cp config.example.yaml config.yaml
+# Edit config.yaml with your settings
+
+# Or use .env file
+cp .env.example .env
+# Edit .env with your credentials
+```
+
+#### Detailed Configuration
 
 Edit `config.yaml`:
 
@@ -186,6 +236,25 @@ Contributions welcome! Feel free to:
 - Improve agent capabilities
 - Enhance error handling
 - Add tests
+
+## Recent Improvements 🎉
+
+This project has been enhanced with:
+- ✅ **GitHub Codespaces Support** - Use from any device, including mobile!
+- ✅ **Docker Containerization** - Easy deployment with Docker/docker-compose
+- ✅ **Enhanced Environment Management** - .env file support for credentials
+- ✅ **Mobile-Optimized Quick Start** - Interactive setup wizard
+- ✅ **CI/CD Pipeline** - Automated testing and security scanning
+- ✅ **Comprehensive Mobile Guide** - See [MOBILE_GUIDE.md](MOBILE_GUIDE.md)
+
+See [IMPROVEMENTS.md](IMPROVEMENTS.md) for detailed documentation on workflow improvements.
+
+## Documentation 📚
+
+- [Mobile & Codespace Usage Guide](MOBILE_GUIDE.md) - How to use from your phone
+- [Improvements Documentation](IMPROVEMENTS.md) - Detailed workflow improvements
+- [Configuration Examples](config.example.yaml) - Configuration template
+- [Code Examples](examples/) - Python usage examples
 
 ## License 📄
 
