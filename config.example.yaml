@@ -1,0 +1,25 @@
+# Gemini Workspace Configuration
+# Copy this file to config.yaml and customize for your setup
+
+gemini:
+  # Get API key from: https://makersuite.google.com/app/apikey
+  api_key: null  # Or set GEMINI_API_KEY environment variable
+  model: gemini-pro
+
+raspberry_pi:
+  # Raspberry Pi connection settings
+  host: raspberrypi.local  # Or use IP address like 192.168.1.100
+  port: 22
+  username: pi
+  password: null  # Set password OR use key_path
+  key_path: null  # Path to SSH private key (e.g., ~/.ssh/id_rsa)
+
+esp_devices:
+  # ESP8266/ESP32 settings
+  sketch_directory: ./sketches
+  default_device: esp8266
+  ota_port: 8266
+  
+  # Optional: Device-specific settings
+  # esp32_board: esp32:esp32:esp32
+  # esp8266_board: esp8266:esp8266:generic
