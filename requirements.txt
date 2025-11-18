@@ -1,0 +1,17 @@
+# Gemini Workspace Requirements
+# Install with: pip install -r requirements.txt
+
+# Google Gemini AI
+google-generativeai>=0.3.0
+
+# SSH for Raspberry Pi
+paramiko>=3.0.0
+
+# Configuration management
+PyYAML>=6.0
+
+# Serial communication for ESP devices
+pyserial>=3.5
+
+# HTTP requests for OTA
+requests>=2.31.0
